@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        //ליצור פונקציה קונסטרקטור של יוזרץ למשל הפונקציה מקבלת שם וגיל ומחזירה אובייקט
+        //לאובייקט חייבת להיות מטודה אחת למשל printName
+       
+        function User(name,age){
+        this.name = name;
+        this.age = age;
+        this.printName = function(){
+            console.log(this.name)
+        }
+       }
+
+       //אתה מצייר שלושה אובייקטים כאלה ושם במערך
+
+       let user1 = new User('Shay',24)
+       let user2 = new User('Noam',25)
+       let user3 = new User('Ran',26)
+
+       let arr = [user1,user2,user3]
+
+       
+       // ממוצע גילאים והגיל הכי גבוה
+       
+       let arrAge = arr.map(function(user){
+        return user.age
+       })
+
+       
+       
+       let total=0
+       let avarage=0
+       let max = arrAge[0]
+
+       for(let i=0;i<arrAge.length;i++){
+        total += arrAge[i]
+        avarage = total/arrAge.length
+        if(max <= arrAge[i]){
+            max = arrAge[i]
+        }
+       }
+
+       console.log(max)
+       console.log(avarage)
+
+
+
+       
+    
+
+       
+
+       
+
+
+
+       
+        </script>
+</body>
+</html>
